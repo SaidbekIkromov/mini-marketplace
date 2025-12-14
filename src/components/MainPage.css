@@ -1,0 +1,29 @@
+.main-page-container {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.products-section {
+  min-width: 0;
+}
+
+#products-container {
+  width: 100%;
+}
+
+.cart-section {
+  min-width: 350px;
+}
+
+@media (max-width: 968px) {
+  .main-page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-section {
+    min-width: 100%;
+  }
+}
+
