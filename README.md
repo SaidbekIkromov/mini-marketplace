@@ -1,96 +1,66 @@
-# Mini Marketplace
+# Mini Shopping Market
 
-Mini Marketplace uchun SPA. Mahsulotlar FakeStoreAPI dan yuklanadi.
+A lightweight single‑page shopping experience where products are fetched from **FakeStoreAPI** and users can build a cart with persistent state.
 
-**Ism:** Saidbek Ikromov
+- **Live demo**: `https://mini-marketplace-amber.vercel.app/`
+- **Author**: Saidbek Ikromov
 
-**Sarflangan vaqt:** 10-12 soat
+## Overview
 
-**Qiyinchiliklar:**
-- Vanilla JavaScript va React ni birgalikda ishlatish kerak edi. Product catalog uchun Vanilla JS, cart uchun React. Ularni bog'lash uchun Custom Event ishlatdim.
-- LocalStorage bilan cart ma'lumotlarini saqlash va qayta yuklashda muammolar bo'ldi. useEffect yordamida hal qildim.
-- Responsive dizayn qilish - desktop da ikki ustun, mobile da bitta ustun. CSS Flexbox va Grid yordamida hal qildim.
-- Cart da ko'p mahsulot qo'shganda total qismi ko'rinmay qolardi. Flex layout bilan footer ni pastda fixed orqali hal qildim.
+This project focuses on clean UI, state management, and real-world UX details like persistence and responsive layout.  
+One of the most interesting parts is the architecture: **the product catalog is rendered with Vanilla JavaScript**, while the **cart is a React UI**—connected through browser events.
 
-## Texnologiyalar
+## Key features
 
-- React 18.2.0
-- React Router DOM 6.20.0
-- CSS3 (custom styling, UI library ishlatilmagan)
-- Vanilla JavaScript (mahsulotlar katalogi uchun)
-- LocalStorage (cart saqlash uchun)
-- FakeStoreAPI
+- **Product catalog**: browse products loaded from FakeStoreAPI
+- **Cart management**: add/remove items, change quantity, and see the total
+- **Persistence**: cart is saved to **LocalStorage** and restored on reload
+- **Responsive layout**: two-column desktop layout and stacked mobile layout
+- **Polished interactions**: custom CSS styling with hover/active states
 
-## O'rnatish
+## Tech stack
 
-1. Dependencies o'rnating:
+- **React** 18.2.0
+- **React Router DOM** 6.20.0
+- **Vanilla JavaScript** (product catalog rendering)
+- **CSS3** (custom styling; no UI libraries)
+- **LocalStorage** (cart persistence)
+- **FakeStoreAPI** (`https://fakestoreapi.com/products`)
+
+## Architecture notes (what I learned)
+
+- **Vanilla JS + React integration**: I used **Custom Events** to connect the Vanilla JS product catalog with the React cart.
+- **Reliable persistence**: syncing cart state with LocalStorage via React `useEffect` helped avoid “stale state” issues on refresh.
+- **Responsive UI**: combined Flexbox/Grid to keep layout clean across breakpoints.
+- **Cart total visibility**: adjusted the layout so the total section stays accessible even with many items.
+
+## Getting started
+
+Install dependencies:
+
 ```bash
 npm install
 ```
 
-2. Dasturni ishga tushiring:
+Run the app locally:
+
 ```bash
 npm start
 ```
 
-3. Brauzerda [http://localhost:3000](http://localhost:3000) ochiladi.
+Then open `http://localhost:3000`.
 
-## Asosiy imkoniyatlar
+## Screenshots
 
-- Mahsulotlar ro'yxati
-- Savatga qo'shish/o'chirish
-- Mahsulot miqdorini o'zgartirish
-- Umumiy narxni ko'rsatish
-- LocalStorage da saqlash
-- Responsive dizayn (desktop va mobile)
-
-## Texnik talablar bajarilishi
-
-### Part A: Layout & Styling ✅
-- Ikki bo'lim: Products va Cart
-- Desktop: ikki ustun
-- Mobile: stacklangan bloklar
-- UI library ishlatilmagan (faqat custom CSS)
-- Flexbox va CSS Grid ishlatilgan
-- Buttonlarda hover/active state bor
-
-### Part B: Product Catalog (Vanilla JS) ✅
-- Vanilla JavaScript ishlatilgan (React emas!)
-- Ma'lumotlar FakeStoreAPI dan yuklanadi: `https://fakestoreapi.com/products`
-- Har bir mahsulot kartochkasida:
-  - Rasm
-  - Nomi
-  - Narxi
-  - "Add to cart" tugmasi
-
-### Part C: Shopping Cart (React) ✅
-- Cart React component sifatida yozilgan
-- Funksionallik:
-  - Mahsulot qo'shish
-  - Mahsulot o'chirish
-  - Miqdorni ko'rsatish va o'zgartirish
-  - Umumiy narxni hisoblash
-- **useState** ishlatilgan ✅
-- **useEffect** bilan localStorage ga saqlash va yuklash ✅
-- **CartItem** va **CartList** componentlarga bo'lingan ✅
-
-
-## Skrinshotlar
-
-### Desktop ko'rinish
+### Desktop
 ![Desktop View](./screenshots/desktop.png)
 
-### Savat to'ldirilgan holat
+### Desktop (cart filled)
 ![Desktop View](./screenshots/desktop-cart.png)
 
-### Mobile ko'rinish
+### Mobile
 ![Mobile View](./screenshots/mobile.png)
 
-### Savat to'ldirilgan holat
+### Mobile (cart filled)
 ![Cart with Items](./screenshots/cart.png)
 
-## Demo
-
-**Demo Link:** https://mini-marketplace-amber.vercel.app/
-
----
