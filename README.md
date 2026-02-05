@@ -2,7 +2,7 @@
 
 A lightweight single‑page shopping experience where products are fetched from **FakeStoreAPI** and users can build a cart with persistent state.
 
-- **Live demo**: `https://mini-marketplace-amber.vercel.app/`
+- **Live demo**: [https://mini-marketplace-amber.vercel.app/](https://mini-marketplace-amber.vercel.app/)
 - **Author**: Saidbek Ikromov
 
 ## Overview
